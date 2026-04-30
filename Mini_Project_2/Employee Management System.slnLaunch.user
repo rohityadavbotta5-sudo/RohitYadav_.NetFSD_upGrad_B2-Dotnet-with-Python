@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "..\\EMS.Tests\\EMS.Tests.csproj",
+        "Action": "Start",
+        "DebugTarget": "EMS.Tests"
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../EMS.API.UnitTests/EMS.API.UnitTests.csproj" Id="75270691-0840-4123-b3a9-f4f786ad1b9f" />
+  <Project Path="EMS.API.csproj" />
+</Solution>
