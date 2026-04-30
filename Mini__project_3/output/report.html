@@ -1,0 +1,331 @@
+
+        <html>
+        <head>
+            <title>IT Incident Auto-Triage Report</title>
+
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background: #f4f6f9;
+                    margin: 0;
+                }
+
+                .header {
+                    background: #1f3a5f;
+                    color: white;
+                    padding: 15px;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+
+                .container {
+                    padding: 20px;
+                }
+
+                .summary {
+                    display: flex;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                }
+
+                .card {
+                    background: white;
+                    padding: 15px;
+                    border-radius: 8px;
+                    width: 120px;
+                    text-align: center;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                }
+
+                .card h2 {
+                    margin: 0;
+                    color: #1f3a5f;
+                }
+
+                .section {
+                    background: white;
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+
+                th {
+                    background: #1f3a5f;
+                    color: white;
+                    padding: 10px;
+                }
+
+                td {
+                    padding: 10px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: center;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                /* Severity colors */
+                .critical { color: red; font-weight: bold; }
+                .high { color: orange; font-weight: bold; }
+                .medium { color: goldenrod; font-weight: bold; }
+                .low { color: green; font-weight: bold; }
+
+                /* Type tags */
+                .tag {
+                    padding: 4px 8px;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    color: white;
+                }
+
+                .network { background: #007bff; }
+                .app { background: #6f42c1; }
+                .security { background: #dc3545; }
+                .general { background: #6c757d; }
+
+                /* Breakdown */
+                .breakdown-row {
+                    margin: 8px 0;
+                }
+
+                .label {
+                    font-weight: bold;
+                    margin-right: 10px;
+                }
+
+                .badge {
+                    padding: 4px 8px;
+                    border-radius: 5px;
+                    color: white;
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+
+                .footer {
+                    text-align: center;
+                    font-size: 12px;
+                    color: gray;
+                    margin-top: 20px;
+                }
+            </style>
+        </head>
+
+        <body>
+
+            <div class="header">
+                IT Incident Auto-Triage Report
+            </div>
+
+            <div class="container">
+
+                <!-- Summary Cards -->
+                <div class="summary">
+                    <div class="card">
+                        <h2>12</h2>
+                        <p>Total</p>
+                    </div>
+                    <div class="card">
+                        <h2>4</h2>
+                        <p>Critical</p>
+                    </div>
+                    <div class="card">
+                        <h2>1</h2>
+                        <p>High</p>
+                    </div>
+                    <div class="card">
+                        <h2>4</h2>
+                        <p>Medium</p>
+                    </div>
+                    <div class="card">
+                        <h2>3</h2>
+                        <p>Low</p>
+                    </div>
+                </div>
+
+                <!-- Breakdown Section -->
+                <div class="section">
+                    <h3>Breakdown</h3>
+
+                    <div class="breakdown-row">
+                        <span class="label">By Type:</span>
+                        <span class="badge network">Network: 6</span>
+                        <span class="badge app">App: 2</span>
+                        <span class="badge security">Security: 3</span>
+                        <span class="badge general">General: 1</span>
+                    </div>
+
+                    <div class="breakdown-row">
+                        <span class="label">By Severity:</span>
+                        <span class="badge" style="background:red;">Critical: 4</span>
+                        <span class="badge" style="background:orange;">High: 1</span>
+                        <span class="badge" style="background:goldenrod;">Medium: 4</span>
+                        <span class="badge" style="background:green;">Low: 3</span>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="section">
+                    <h3>Incident Details</h3>
+
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Severity</th>
+                            <th>Team</th>
+                            <th>Timestamp</th>
+                            <th>Jira</th>
+                            <th>ServiceNow</th>
+                        </tr>
+        
+            <tr>
+                <td>INC001</td>
+                <td>Database connection timeout on prod-db-01</td>
+                <td><span class="tag network">network</span></td>
+                <td class="critical">CRITICAL</td>
+                <td>Database</td>
+                <td>2024-04-01 10:00:00+00:00</td>
+                <td>SUP-74</td>
+                <td>cd922ce983e80710d467fbc6feaad31b</td>
+            </tr>
+            
+            <tr>
+                <td>INC002</td>
+                <td>Suspicious login attempts from unknown IP</td>
+                <td><span class="tag security">security</span></td>
+                <td class="low">LOW</td>
+                <td>Security</td>
+                <td>2024-04-01 10:10:00+00:00</td>
+                <td>SUP-75</td>
+                <td>7a92202d83e80710d467fbc6feaad3b0</td>
+            </tr>
+            
+            <tr>
+                <td>INC003</td>
+                <td>Checkout service returning NullPointerException</td>
+                <td><span class="tag app">app</span></td>
+                <td class="low">LOW</td>
+                <td>Application</td>
+                <td>2024-04-01 10:20:00+00:00</td>
+                <td>SUP-76</td>
+                <td>dca2202d83e80710d467fbc6feaad3c7</td>
+            </tr>
+            
+            <tr>
+                <td>INC004</td>
+                <td>Network switch offline in DC rack B</td>
+                <td><span class="tag network">network</span></td>
+                <td class="critical">CRITICAL</td>
+                <td>Network</td>
+                <td>2024-04-01 10:30:00+00:00</td>
+                <td>SUP-77</td>
+                <td>eda2602d83e80710d467fbc6feaad3a6</td>
+            </tr>
+            
+            <tr>
+                <td>INC005</td>
+                <td>Ransomware signature detected on workstation</td>
+                <td><span class="tag security">security</span></td>
+                <td class="critical">CRITICAL</td>
+                <td>Security</td>
+                <td>2024-04-01 10:40:00+00:00</td>
+                <td>SUP-78</td>
+                <td>32a2a02d83e80710d467fbc6feaad360</td>
+            </tr>
+            
+            <tr>
+                <td>INC006</td>
+                <td>Payment gateway timeout — Stripe API 503</td>
+                <td><span class="tag app">app</span></td>
+                <td class="high">HIGH</td>
+                <td>Application</td>
+                <td>2024-04-01 10:50:00+00:00</td>
+                <td>SUP-79</td>
+                <td>7fa26ce983e80710d467fbc6feaad3b4</td>
+            </tr>
+            
+            <tr>
+                <td>INC007</td>
+                <td>Intermittent packet loss on VLAN 30</td>
+                <td><span class="tag network">network</span></td>
+                <td class="medium">MEDIUM</td>
+                <td>Network</td>
+                <td>2024-04-01 11:00:00+00:00</td>
+                <td>SUP-80</td>
+                <td>b0b2e02d83e80710d467fbc6feaad3ad</td>
+            </tr>
+            
+            <tr>
+                <td>INC008</td>
+                <td>Phishing email reported by employees</td>
+                <td><span class="tag security">security</span></td>
+                <td class="medium">MEDIUM</td>
+                <td>Security</td>
+                <td>2024-04-01 11:10:00+00:00</td>
+                <td>SUP-81</td>
+                <td>71b2242d83e80710d467fbc6feaad37f</td>
+            </tr>
+            
+            <tr>
+                <td>INC009</td>
+                <td>API response slow — P95 latency 4.2s</td>
+                <td><span class="tag network">network</span></td>
+                <td class="medium">MEDIUM</td>
+                <td>Application</td>
+                <td>2024-04-01 11:20:00+00:00</td>
+                <td>SUP-82</td>
+                <td>9fb2642d83e80710d467fbc6feaad31f</td>
+            </tr>
+            
+            <tr>
+                <td>INC010</td>
+                <td>Scheduled job failed — non-production environment</td>
+                <td><span class="tag general">general</span></td>
+                <td class="critical">CRITICAL</td>
+                <td>Application</td>
+                <td>2024-04-01 11:30:00+00:00</td>
+                <td>SUP-83</td>
+                <td>5cc2a42d83e80710d467fbc6feaad3b8</td>
+            </tr>
+            
+            <tr>
+                <td>INC011</td>
+                <td>Minor firewall rule misconfiguration found</td>
+                <td><span class="tag network">network</span></td>
+                <td class="low">LOW</td>
+                <td>Security</td>
+                <td>2024-04-01 11:40:00+00:00</td>
+                <td>SUP-84</td>
+                <td>55c2e42d83e80710d467fbc6feaad37e</td>
+            </tr>
+            
+            <tr>
+                <td>INC012</td>
+                <td>DNS resolution intermittent on 10.2.0.0/16</td>
+                <td><span class="tag network">network</span></td>
+                <td class="medium">MEDIUM</td>
+                <td>Network</td>
+                <td>2024-04-01 11:50:00+00:00</td>
+                <td>SUP-85</td>
+                <td>a2c2282d83e80710d467fbc6feaad31f</td>
+            </tr>
+            
+                    </table>
+                </div>
+
+                <div class="footer">
+                    Generated by Incident Automation System
+                </div>
+
+            </div>
+        </body>
+        </html>
+        
