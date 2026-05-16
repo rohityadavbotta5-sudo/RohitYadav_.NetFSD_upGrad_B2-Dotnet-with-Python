@@ -43,6 +43,8 @@ Regex pattern matching
 API integration flow
 Decorators & iterators
 File handling in Python
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 README — Employee Management System
 📌 Overview
 
